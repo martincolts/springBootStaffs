@@ -12,6 +12,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @EntityScan
 @EnableJpaRepositories
@@ -36,6 +37,16 @@ public class UserController {
             return userRepository.save(userDTO.toUser());
 
         }
+    }
+
+    @RequestMapping (value="/getAll" , method = RequestMethod.GET)
+    public List<User> getAllUsers (){
+        return userRepository.findAll();
+    }
+
+    @RequestMapping (value="/getById/{userId}" , method = RequestMethod.GET)
+    public User getById (@PathVariable Long userId){
+        return userRepository.findById(userId);
     }
 
 

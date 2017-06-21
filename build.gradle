@@ -30,6 +30,7 @@ dependencies {
 	exclude(module: 'spring-asm')*/
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('com.h2database:h2')
+	compile group: 'org.webjars', name: 'angularjs', version: '1.6.4'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 
 

@@ -29,7 +29,6 @@ public class UserController {
 
     @RequestMapping (value = "/save" , method= RequestMethod.POST , consumes = MediaType.APPLICATION_JSON_VALUE)
     public User saveUser (@Valid @RequestBody UserDTO userDTO, BindingResult bindingResult) throws BindException {
-        System.out.println("Entro al save user");
         if (bindingResult.hasErrors()){
             throw new BindException(bindingResult);
         }

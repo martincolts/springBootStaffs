@@ -1,17 +1,14 @@
 package com.probando.algo.user;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by jmlopez on 18/05/17.
  */
 
 @Entity
+@Table(name="USERS")
 public class User {
-
 
     @Id
     @GeneratedValue
@@ -19,11 +16,11 @@ public class User {
     private Long id ;
     private String name ;
     private String lastname ;
+    private String username ;
+    private String password ;
 
     public User (){
-
     }
-
 
     public void setId(Long id) {
         this.id = id;
@@ -47,5 +44,21 @@ public class User {
 
     public String getLastname() {
         return lastname;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

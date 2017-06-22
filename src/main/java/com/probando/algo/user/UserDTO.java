@@ -12,6 +12,10 @@ public class UserDTO {
     private String name ;
     @NotNull
     private String lastname ;
+    @NotNull
+    private String password ;
+    @NotNull
+    private String username ;
 
     public UserDTO(){}
 
@@ -23,10 +27,20 @@ public class UserDTO {
         this.lastname = lastname;
     }
 
+    public void setPassword (String password){
+        this.password = password ;
+    }
+
+    public void setUsername (String username){
+        this.username = username ;
+    }
+
     public User toUser (){
         User user = new User ();
         user.setLastname(this.lastname);
         user.setName(this.name);
+        user.setPassword(this.password);
+        user.setUsername(this.username);
         return user ;
     }
 }

@@ -7,8 +7,6 @@ import org.springframework.context.annotation.ComponentScan;
 
 
 @ComponentScan(basePackages = {"com.probando.algo" , "com.probando.algo.user"})
-/*@EntityScan(value = "com.probando.algo.user")
-@EnableJpaRepositories("com.probando.algo.user")*/
 @SpringBootApplication
 public class AlgoApplication {
 

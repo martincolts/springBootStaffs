@@ -12,7 +12,6 @@ public class User {
 
     @Id
     @GeneratedValue
-    //@Column(name="id", nullable=false)
     private Long id ;
     private String name ;
     private String lastname ;

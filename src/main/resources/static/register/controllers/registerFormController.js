@@ -5,7 +5,7 @@ angular.module('myApp')
                 registerService.saveUser ($scope.user , function(response){
                     console.log("se salvo bien");
                     console.log(response.data);
-                    alert("Se ingreso correctamente.");
+                    alert("Se ingreso correctamegetAllnte.");
                     $scope.user = {};
                 }, function (response){
                     console.log(response.data);

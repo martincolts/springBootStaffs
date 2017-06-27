@@ -1,11 +1,21 @@
-var register = angular.module("register", ['ngRoute']);
-register.config(function($routeProvider) {
-    $routeProvider
-    .when("/", {
-        templateUrl : "register/templates/registerForm.tpl.html"
-    })
-    .when("/register",{
-        templateUrl : "register/templates/registerForm.tpl.html"
-
-    });
-});
+var register = angular.module("register", ['ui.router']);
+register.config(['$stateProvider','$urlRouterProvider',function($stateProvider , $urlRouterProvider) {
+    //$urlRouterProvider.otherwise('/register');
+    $stateProvider
+        .state('register',{
+            url:'/register',
+            views:{
+                'body':{
+                    templateUrl : 'register/templates/registerForm.tpl.html'
+                }
+            }
+        })
+        .state('list',{
+            url:'/list',
+            views:{
+                'body':{
+                    templateUrl : '/register/templates/registerList.tpl.html'
+                }
+            }
+        });
+}]);

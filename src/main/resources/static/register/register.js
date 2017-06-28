@@ -2,19 +2,25 @@ var register = angular.module("register", ['ui.router']);
 register.config(['$stateProvider','$urlRouterProvider',function($stateProvider , $urlRouterProvider) {
     //$urlRouterProvider.otherwise('/register');
     $stateProvider
-        .state('register',{
-            url:'/register',
+        .state('main.register',{
+            url: '/register' ,
             views:{
-                'body':{
+                "body":{
                     templateUrl : 'register/templates/registerForm.tpl.html'
+                },
+                "menu": {
+                    template: "<ul><li ng-repeat='item in items'>{{item}}</li></ul>",
+                    controller: function($scope) {
+                        $scope.items = ['foo1', 'bar1'];
+                    }
                 }
             }
         })
-        .state('list',{
-            url:'/list',
+        .state('main.list',{
+            url : '/list' ,
             views:{
-                'body':{
-                    templateUrl : '/register/templates/registerList.tpl.html'
+                "body":{
+                    templateUrl : 'register/templates/registerList.tpl.html'
                 }
             }
         });
